@@ -50,7 +50,7 @@ class BalanceView(APIView):
         transactions = Transaction.objects.filter(user=user)
         saldo = 0
         for t in transactions:
-            if t.type == 'entrada':
+            if t.type == 'in':
                 saldo += t.value
             else:
                 saldo -= t.value
